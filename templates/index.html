@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block body %}
+  {% if session['name'] %}
+    <h2>Welcome {{ session['name'] }}!
+    <a href="/logout"><i class="uil uil-signout"></i></a>
+    <a href="/profile"><i class="uil uil-cog"></i></a>
+    </h2>
+  {% else %}
+      
+    <form action="/exercise" method="post">
+      <input type="text" name="first" id="first" autofocus autocomplete="off" placeholder="First Name">
+      <input type="text" name="last" id="last" autocomplete="off" placeholder="Last Name">
+      <input type="submit" value="Login">
+    </form>
+{% endif %}
+  <img src="/static/equip2.jpg" alt="Workout equipment" width="50%">
+{% endblock %}
